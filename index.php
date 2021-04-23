@@ -18,23 +18,47 @@ Olimpia Milano - Cantù | 55-60 -->
     <div class="Snack_1">
     <h2>Snack 1</h2>
     <?php
-        $todaymatches = [ 
-            "Roma - Verona" => [
-            "squadra1" => 40,
-            "squadra2" => 30
+
+        $partiteCampionato = [
+            [
+                'data_incontro' => '23/02/2021',
+                'in_casa' => [
+                    'nome_squadra' => 'Roma',
+                    'punteggio' => 40
+                ],
+                'fuori_casa' => [
+                    'nome_squadra' => 'Verona',
+                    'punteggio' => 30
+                ],
             ],
-            "Inter - Napoli" => [
-            "squadra1" => 50,
-            "squadra2" => 20
+            [
+                'data_incontro' => '23/02/2021',
+                'in_casa' => [
+                    'nome_squadra' => 'Inter',
+                    'punteggio' => 50
+                ],
+                'fuori_casa' => [
+                    'nome_squadra' => 'Napoli',
+                    'punteggio' => 20
+                ],
             ],
-            "Sampdoria - Cittadella" =>  [
-                "squadra1"=>45,
-                "squadra2"=>60
+            [
+                'data_incontro' => '23/02/2021',
+                'in_casa' => [
+                    'nome_squadra' => 'Sampdoria',
+                    'punteggio' => 34
+                ],
+                'fuori_casa' => [
+                    'nome_squadra' => 'Cittadella',
+                    'punteggio' => 22
+                ],
             ]
         ];
 
-        foreach ($todaymatches as $key => &$arraycont) {
-            echo($key." | ".$arraycont["squadra1"]."-".$arraycont["squadra2"]." ");
+
+        foreach ($partiteCampionato as $match) {
+            echo $match["in_casa"]["nome_squadra"]. " - " .$match["fuori_casa"]["nome_squadra"]. " | ".$match["in_casa"]["punteggio"]."-".$match["fuori_casa"]["punteggio"];
+            
             echo("<br></br>");
         };
         
