@@ -14,6 +14,9 @@
 Ogni array avrà una squadra di casa e una squadra ospite, punti fatti dalla squadra di casa e punti fatti dalla squadra ospite.
 Stampiamo a schermo tutte le partite con questo schema.
 Olimpia Milano - Cantù | 55-60 -->
+    
+    <div class="Snack_1">
+    <h2>Snack 1</h2>
     <?php
         $todaymatches = [ 
             "Roma - Verona" => [
@@ -38,7 +41,41 @@ Olimpia Milano - Cantù | 55-60 -->
           
     ?>
 
-    
+    </div>
+
+<!-- Snack 2 -->
+
+<!-- Passare come parametri GET name, mail e age e verificare (cercando i metodi che non conosciamo nella documentazione)
+ che name sia più lungo di 3 caratteri, che mail contenga un punto e una chiocciola e che age sia un numero. 
+ Se tutto è ok stampare “Accesso riuscito”, altrimenti “Accesso negato”.   
+ -->
+
+<div class="Snack_2">
+<h2>Snack 2</h2>
+<?php
+    $name=$_GET["name"];
+    $mail=$_GET["mail"];
+    $age=$_GET["age"];
+
+    if(empty($name) || empty($mail) || empty($age) ) {
+        $string="Inserisci tutti i dati";
+    }
+    else{
+
+        if(strlen($name)>3 && filter_var($mail, FILTER_VALIDATE_EMAIL) && is_numeric($age)==true){
+            $string="Accesso Riuscito";
+        }else {
+            $string="Accesso Negato";
+        }
+    };
+   
+?>
+
+<div> <?php echo$string; ?></div>
+
+
+</div>
+
 
 
 
